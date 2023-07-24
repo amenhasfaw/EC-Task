@@ -1,12 +1,24 @@
-// AttractionList.js
 
-const AttractionList = () => {
+const AttractionList = ({ selectedFilter, attractions }) => {
   return (
     <div className="attraction-list">
-      <h2>List of Attractions</h2>
-      <ul>
+      <h6>{selectedFilter}</h6>
+      <ul>  
         {/* Map through the attractions and render each one as a list item */}
-        
+        {attractions.map((attraction) => (
+          <li key={attraction.location_id} className="attraction-item">
+            <div className="attraction-image">
+              <img src={attraction.photo.images.small.url} alt={attraction.name} />
+            </div>
+            <div className="attraction-info">
+              <div className="attraction-name">{attraction.name}</div>
+              <div className="attraction-rating">{attraction.rating}</div>
+              <div className="attraction-subtype">{attraction.subtype ? attraction.subtype.map(subtype => subtype.name).join(' · ') : ''}</div>
+              <div className="attraction-address">{attraction.address ? attraction.address : attraction.ranking}</div>
+              
+            </div>
+          </li>
+        ))}
       </ul>
     </div>
   );

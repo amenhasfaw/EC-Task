@@ -14,20 +14,22 @@ const Header = ({ filterValue, filterOnChange, onDateChange, onSearchChange, sel
 
   return (
     <header className="header">
-      <DatePicker
-        selected={selectedDate}
-        onChange={handleDateChange}
-        className="header__date-picker"
-        dateFormat="dd/MM/yyyy"
-      />
       <input
         type="text"
         placeholder="Search..."
         className="header__search"
         onChange={handleSearchChange}
       />
+      {filterValue === 'Hotels' && ( 
+        <DatePicker
+          selected={selectedDate}
+          onChange={handleDateChange}
+          className="header__date-picker"
+          dateFormat="dd/MM/yyyy"
+        />
+      )}
       <div id='filter'>
-        <label className="header__button">Filter</label>
+        <label className="header__button">Filter :</label>
         <div className="dropdown-filter">
           <select value={filterValue} onChange={filterOnChange}>
             <option value="Attractions">Attractions</option>

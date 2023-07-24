@@ -22,12 +22,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ccc;
+  background-color: #ddd;
   padding: 1rem;
 }
 
 .header__button {
-  background-color: #ddd;
+  background-color: #eee;
   color: #030303;
   border: 1px solid #000000;
   border-radius: 50%;
@@ -55,7 +55,7 @@
   border-radius: 4px;
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(0,0,0,0.54);
-  color: #2196f3;
+  color: #4b4b4b;
   cursor: pointer;
 }
 #filter{
@@ -91,7 +91,7 @@
 }
 /* Map.css */
 .map-container {
-  height: 400px;
+  height: 600px;
   width: 100%;
   /* margin-top: 1rem; */
 }
@@ -156,3 +156,63 @@ select::after {
     top: 42%;
   }
 }
+
+/* AttractionList.css */
+
+.attraction-list {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 600px; /* Set a fixed height for the container */
+  overflow-y: auto; /* Add vertical scroll when content exceeds the box */
+}
+
+.attraction-list h6{
+  padding: 0px;
+  margin: 10px;
+}
+
+.attraction-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.attraction-info {
+  flex: 1;
+  padding-left: 16px;
+}
+
+.attraction-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.attraction-rating {
+  font-size: 14px;
+  color: #888;
+}
+
+.attraction-subtype{
+  font-weight: lighter;
+}
+
+.attraction-address {
+  font-size: 14px;
+}
+
+.attraction-image {
+  flex: 0 0 100px;
+}
+
+.attraction-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+

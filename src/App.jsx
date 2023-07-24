@@ -1,9 +1,9 @@
 // App.js
 import { useEffect, useState } from 'react';
-import Header from './components/Header';
-import RangeSlider from './components/RangeSlider';
-import AttractionList from './components/AttractionList';
-import Map from './components/Map';
+import Header from './components/Header.jsx';
+import RangeSlider from './components/RangeSlider.jsx';
+import AttractionList from './components/AttractionList.jsx';
+import Map from './components/Map.jsx';
 import { getPlacesData } from './api';
 import './App.css';
 

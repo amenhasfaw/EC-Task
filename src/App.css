@@ -228,8 +228,9 @@ select::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
-  color: #FFF; /* Customize the text color of the marker */
+  font-size: 9px;
+  text-align: center;
+  color: #fdffec; /* Customize the text color of the marker */
   font-weight: bold;
 }
 

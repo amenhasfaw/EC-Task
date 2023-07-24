@@ -2,7 +2,7 @@ import GoogleMapReact from 'google-map-react';
 
 const Map = ({ coords, setCoords, setBounds, attractions, range }) => {
   const center = { lat: coords.lat, lng: coords.lng }; // Set the default center of the map (e.g., latitude and longitude)
-  let zoom = 14.4 - (range/5)
+  let zoom = 14.4 - (range/4)
 
   const MarkersC = ({ text }) => <div className="contact">{text}</div>;
   return (

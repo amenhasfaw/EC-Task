@@ -4,7 +4,6 @@ const AttractionList = ({ selectedFilter, attractions }) => {
     <div className="attraction-list">
       <h6>{selectedFilter}</h6>
       <ul>  
-        {/* Map through the attractions and render each one as a list item */}
         {attractions.map((attraction) => (
           <li key={attraction.location_id} className="attraction-item">
             <div className="attraction-image">

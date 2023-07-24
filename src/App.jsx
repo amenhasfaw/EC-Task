@@ -8,7 +8,7 @@ import { getPlacesData } from './api';
 import './App.css';
 
 const App = () => {
-  const [rangeValue, setRangeValue] = useState(3); // Set the default range value to 3 KM
+  const [rangeValue, setRangeValue] = useState(3); 
   const [selectedFilter, setSelectedFilter] = useState('Attractions');
   const [coords, setCoords] = useState({});
   const [bounds, setBounds] = useState(null);

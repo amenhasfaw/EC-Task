@@ -220,12 +220,9 @@ select::after {
 /* Customize the marker appearance */
 
 .contact {
-  position: absolute;
-  top: -20px; /* Adjust this value to vertically align the marker with the location */
-  left: -20px; /* Adjust this value to horizontally align the marker with the location */
-  width: 40px;
-  height: 40px;
-  background-color: #FF5733; /* Customize the background color of the marker */
+  width: 80px;
+  height: 80px;
+  background-color: #ff583379; /* Customize the background color of the marker */
   border: 2px solid #FFF; /* Customize the border color of the marker */
   border-radius: 50%;
   display: flex;

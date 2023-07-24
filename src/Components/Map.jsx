@@ -1,5 +1,6 @@
 import GoogleMapReact from 'google-map-react';
 
+
 const Map = ({ coords, setCoords, setBounds, attractions, range }) => {
   const center = { lat: coords.lat, lng: coords.lng };
   let zoom = 14.4 - (range/4)
@@ -8,7 +9,7 @@ const Map = ({ coords, setCoords, setBounds, attractions, range }) => {
   return (
     <div className="map-container">
       <GoogleMapReact
-        bootstrapURLKeys={{ key: process.env.GOOGLE_MAP_API_KEY }} 
+        bootstrapURLKeys={{ key: import.meta.env.VITE_GOOGLE_MAP_API_KEY }} 
         center={center}
         zoom={zoom}
         className="map"

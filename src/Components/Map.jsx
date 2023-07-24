@@ -6,7 +6,7 @@ const Map = ({ coords, setCoords, setBounds, attractions }) => {
   return (
     <div className="map-container">
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyCYbKMzHfh9DdMECu0GDK1XFgsv4gRlGHw' }} // Replace with your actual API key
+        bootstrapURLKeys={{ key: 'AIzaSyCYbKMzHfh9DdMECu0GDK1XFgsv4gRlGHw' }} 
         center={center}
         defaultZoom={14}
         className="map"
@@ -16,7 +16,6 @@ const Map = ({ coords, setCoords, setBounds, attractions }) => {
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
         }}
       >
-        {/* Map through the attractions and create a marker for each one */}
         {attractions.map((attraction) => (
           <Marker key={attraction.id} lat={attraction.latitude} lng={attraction.longitude} text={attraction.name} />
         ))}
@@ -25,7 +24,6 @@ const Map = ({ coords, setCoords, setBounds, attractions }) => {
   );
 };
 
-// Custom Marker component to display a marker with a popup
 const Marker = ({text}) => <div className="marker">{text}</div>;
 
 export default Map;

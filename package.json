@@ -1,6 +1,7 @@
 {
   "name": "ec-task",
-  "private": true,
+  "private": false,
+  "homepage": "https://amenhasfaw.github.io/EC-Task/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

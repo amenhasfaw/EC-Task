@@ -216,3 +216,29 @@ select::after {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Add this CSS to your stylesheet or style section */
+/* Customize the marker appearance */
+
+.contact {
+  position: absolute;
+  top: -20px; /* Adjust this value to vertically align the marker with the location */
+  left: -20px; /* Adjust this value to horizontally align the marker with the location */
+  width: 40px;
+  height: 40px;
+  background-color: #FF5733; /* Customize the background color of the marker */
+  border: 2px solid #FFF; /* Customize the border color of the marker */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #FFF; /* Customize the text color of the marker */
+  font-weight: bold;
+}
+
+/* Add hover styles for the markers if needed */
+.contact:hover {
+  background-color: #FF8833; /* Customize the hover background color */
+  border: 2px solid #FF5733; /* Customize the hover border color */
+  cursor: pointer;
+}

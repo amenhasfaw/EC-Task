@@ -1,14 +1,16 @@
 import GoogleMapReact from 'google-map-react';
 
-const Map = ({ coords, setCoords, setBounds, attractions }) => {
+const Map = ({ coords, setCoords, setBounds, attractions, range }) => {
   const center = { lat: coords.lat, lng: coords.lng }; // Set the default center of the map (e.g., latitude and longitude)
+  let zoom = 14.4 - (range/5)
+
   const MarkersC = ({ text }) => <div className="contact">{text}</div>;
   return (
     <div className="map-container">
       <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyCYbKMzHfh9DdMECu0GDK1XFgsv4gRlGHw' }} 
         center={center}
-        zoom={14.5}
+        zoom={zoom}
         className="map"
         yesIWantToUseGoogleMapApiInternals
         onChange={(e) => {

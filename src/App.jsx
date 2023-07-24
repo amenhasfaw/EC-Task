@@ -68,7 +68,8 @@ const App = () => {
           coords={coords}
           setCoords={setCoords}
           setBounds={setBounds}
-          attractions = {places}/>
+          attractions = {places}
+          range={rangeValue}/>
       </div>
     </div>
   );

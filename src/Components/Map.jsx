@@ -5,7 +5,13 @@ const Map = ({ coords, setCoords, setBounds, attractions, range }) => {
   const center = { lat: coords.lat, lng: coords.lng };
   let zoom = 15.4 - (range/3)
 
-  const MarkersC = ({ text }) => <div className="contact">{text}</div>;
+  const MarkersC = ({ text, rating }) => (
+    <div className="marker">
+      <img src="pin-icon.png" alt="Pin" className="pin-icon" />
+      <div className="marker-tooltip">{text} - {rating}</div>
+    </div>
+  );
+  
   return (
     <div className="map-container">
       <GoogleMapReact
@@ -20,7 +26,7 @@ const Map = ({ coords, setCoords, setBounds, attractions, range }) => {
         }}
       >
         {attractions.map((attraction, i) => (
-          <MarkersC lat={attraction.latitude} lng={attraction.longitude} text={attraction.name} key={i} />
+          <MarkersC lat={attraction.latitude} lng={attraction.longitude} text={attraction.name} rating={attraction.rating} key={i} />
         ))}
       </GoogleMapReact>
     </div>

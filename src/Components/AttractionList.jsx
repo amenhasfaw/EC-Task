@@ -14,7 +14,6 @@ const AttractionList = ({ selectedFilter, attractions }) => {
               <div className="attraction-rating">{attraction.rating}</div>
               <div className="attraction-subtype">{attraction.subtype ? attraction.subtype.map(subtype => subtype.name).join(' · ') : ''}</div>
               <div className="attraction-address">{attraction.address ? attraction.address : attraction.ranking}</div>
-              
             </div>
           </li>
         ))}

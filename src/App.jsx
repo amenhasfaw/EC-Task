@@ -23,16 +23,17 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if(bounds){
+    if (bounds) {
+      setPlaces([]);
+  
       getPlacesData(selectedFilter, bounds.sw, bounds.ne)
         .then((data) => {
-          setPlaces([])
-          return data
-        }).then((data) => {
-          setPlaces(data.filter((place) => place.name && place.num_reviews > 0));
+          const filteredData = data.filter((place) => place.name && place.num_reviews > 0);
+          setPlaces(filteredData);
         });
-      }
+    }
   }, [bounds, selectedFilter]);
+  
 
 
   const handleRangeChange = (value) => {

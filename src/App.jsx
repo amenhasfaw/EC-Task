@@ -14,7 +14,7 @@ const App = () => {
   const [bounds, setBounds] = useState(null);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [places, setPlaces] = useState([]);
-  const [searchText, setSearchText] = useState('');
+  const [autocomplete, setAutocomplete] = useState(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
@@ -26,6 +26,9 @@ const App = () => {
     if(bounds){
       getPlacesData(selectedFilter, bounds.sw, bounds.ne)
         .then((data) => {
+          setPlaces([])
+          return data
+        }).then((data) => {
           setPlaces(data.filter((place) => place.name && place.num_reviews > 0));
         });
       }
@@ -45,8 +48,13 @@ const App = () => {
     setSelectedDate(date);
   };
 
-  const handleSearchChange = (searchValue) => {
-    setSearchText(searchValue);
+  const onLoad = (autoC) => setAutocomplete(autoC);
+
+  const onPlaceChanged = () => {
+    const lat = autocomplete.getPlace().geometry.location.lat();
+    const lng = autocomplete.getPlace().geometry.location.lng();
+
+    setCoords({ lat, lng });
   };
 
 
@@ -57,8 +65,9 @@ const App = () => {
         filterValue={selectedFilter} 
         filterOnChange={handleFilterChange}
         onDateChange={handleDateChange}
-        onSearchChange={handleSearchChange}
-        selectedDate={selectedDate} />
+        selectedDate={selectedDate}
+        onPlaceChanged={onPlaceChanged} 
+        onLoad={onLoad}  />
       <RangeSlider value={rangeValue} onChange={handleRangeChange} />
       <div className="main-content">
         <AttractionList
